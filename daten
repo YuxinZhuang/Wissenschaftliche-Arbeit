@@ -1,0 +1,14 @@
+install.packages("psych")
+library(psych)
+data("bfi")
+O <- bfi[,c("O1","O2","O3", "O4", "O5")]
+cov(O)
+cov(O, use="pairwise.complete.obs")
+O$O2 <-  -O$O2
+O$O5 <- -O$O5
+C <- cov(O, use = "pairwise.complete.obs")
+C
+k <- 5
+VarO <- sum(C)
+(myalpha <- k/(k-1)*(1-sum(diag(C))/VarO))
+alpha(O)
