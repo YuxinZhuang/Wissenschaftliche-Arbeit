@@ -1,3 +1,12 @@
+#von zhuanghyuxin
+D <- function(df, var1, var2) {
+  ttest <- t.test(df[[var1]] ~ df[[var2]])
+  stats <- c(ttest$estimate, ttest$p.value)
+  names(stats) <- c("mean in group FALSE","mean in group TRUE ","p-value")
+  return(stats)
+}
+
+
 xjkabjkabkjcabjkclanckanc\
 m, cakc k cks
 玛卡巴卡
